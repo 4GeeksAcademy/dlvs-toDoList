@@ -33,7 +33,8 @@ export const TodoList = () => {
             /* onKeyDown={handleAddTodo} */
             onKeyUp={(event) => {
               if (event.key === "Enter") {
-                setList(list.concat(inputValue ));
+                if (inputValue.trim() === "") return
+                setList(list.concat(inputValue));
                 setInputValue('')
               }
             }}
